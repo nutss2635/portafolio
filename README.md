@@ -2,7 +2,7 @@
 
 ¡Hola! Este repositorio contiene el código fuente de mi portafolio. Este proyecto fue maquetado y programado bajo el concepto visual de un **libro interactivo**, reflejando tanto mi perfil técnico como mi lado creativo.
 
-🔗 **[Ver Portafolio Online](https://tu-usuario.github.io/tu-repositorio)** *(cuando esté listo se verá jeje)*
+🔗 **[Ver Portafolio Online](https://nutss2635.github.io/portafolio)**
 
 ---
 
