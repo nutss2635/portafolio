@@ -37,25 +37,30 @@
 
   /* ---------- BOOK ---------- */
   .stage{ perspective:2400px; width:min(94vw, 980px); height:min(80vh, 640px); position:relative; }
-  /* book cover / binding that peeks behind the pages so the shape reads */
+  /* hardcover / binding that frames the pages so the book shape reads */
   .stage::before{
-    content:""; position:absolute; inset:-13px -18px -15px -12px;
-    background:linear-gradient(140deg, #5a0016, #33000c 70%);
-    border-radius:8px 18px 18px 8px;
-    box-shadow: 0 26px 64px rgba(0,0,0,.6), inset 0 0 0 2px rgba(255,217,217,.12);
+    content:""; position:absolute; inset:-17px -19px -11px -20px;
+    background:linear-gradient(135deg, #66001d, #3a000e 62%);
+    border-radius:6px 13px 13px 5px;
+    box-shadow:
+      0 12px 26px rgba(0,0,0,.3),
+      inset 0 0 0 2px rgba(255,217,217,.16),
+      inset 0 0 24px rgba(0,0,0,.42);
     z-index:0;
   }
-  /* stacked page edges on the right */
+  /* fore-edge: stacked page tips hugging the right side of the pages */
   .stage::after{
-    content:""; position:absolute; top:6px; bottom:8px; right:-10px; width:12px;
-    background:repeating-linear-gradient(180deg, #efe6da 0 2px, #cdbfae 2px 4px);
-    border-radius:0 6px 6px 0; z-index:0;
+    content:""; position:absolute; top:3px; bottom:3px; right:-11px; width:13px;
+    background:repeating-linear-gradient(180deg, #f4ede2 0 2px, #d6c9b4 2px 3px);
+    border-radius:0 3px 3px 0;
+    box-shadow:1px 1px 4px rgba(0,0,0,.35);
+    z-index:1;
   }
   .book{ position:relative; width:100%; height:100%; transform-style:preserve-3d; }
   .page{
     position:absolute; inset:0; transform-origin:left center; transform-style:preserve-3d;
     transition:transform 1.05s cubic-bezier(.2,.75,.25,1);
-    border-radius:4px 12px 12px 4px; box-shadow: 14px 16px 46px var(--shadow);
+    border-radius:4px 12px 12px 4px; box-shadow: 6px 8px 22px rgba(0,0,0,.26);
   }
   .page.flipped{ transform:rotateY(-180deg); }
   .face{
@@ -84,7 +89,7 @@
   }
   .stripes.tall{ height:100%; width:14px; }
   .marquee{ overflow:hidden; white-space:nowrap; background:var(--wine); }
-  .marquee > div{ display:inline-block; padding:7px 0; animation:scroll 18s linear infinite; }
+  .marquee > div{ display:inline-block; white-space:nowrap; padding:7px 0; animation:scroll 45s linear infinite; }
   .marquee span{ color:var(--pink); font-family:var(--sans); font-weight:500; letter-spacing:3px; font-size:11px; text-transform:uppercase; padding:0 22px; }
   .marquee .sp{ color:var(--rose); }
   @keyframes scroll{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
@@ -157,8 +162,11 @@
     display:flex; flex-direction:column; transition:.25s;
   }
   .proj:hover{ transform:translateY(-5px); box-shadow:0 14px 28px rgba(77,0,17,.22); }
+  /* on the dark pine page a wine shadow is invisible: use a dark halo + light ring so the card pops */
+  .theme-pine .proj{ box-shadow:0 16px 34px rgba(0,0,0,.55), 0 0 0 1px rgba(255,217,217,.18); }
+  .theme-pine .proj:hover{ box-shadow:0 22px 44px rgba(0,0,0,.6), 0 0 0 1px rgba(255,217,217,.28); }
   .proj .banner{ background:var(--pine); color:var(--pink); padding:8px 14px; display:flex; justify-content:space-between; align-items:center; }
-  .theme-pink .proj .banner{ background:var(--wine); }
+  .theme-pink .proj .banner, .theme-pine .proj .banner{ background:var(--wine); }
   .proj .banner .num{ font-size:22px; color:var(--rose); }
   .proj .banner .tag{ font-size:10px; letter-spacing:2px; text-transform:uppercase; }
   .proj .body{ padding:14px 16px 16px; display:flex; flex-direction:column; gap:8px; flex:1; }
@@ -288,7 +296,7 @@
             <span>café</span><span class="sp">✦</span><span>código</span><span class="sp">✦</span><span>diseño</span><span class="sp">✦</span>
           </div></div>
         </div></div>
-        <div class="face back"><div class="sheet"><span class="mark">☕</span></div></div>
+        <div class="face back"><div class="sheet"></span></div></div>
       </div>
 
       <!-- ===== 1. TABLA DE CONTENIDO ===== -->
@@ -310,7 +318,7 @@
             <div class="stripes tall"></div>
           </div>
         </div></div>
-        <div class="face back"><div class="sheet"><span class="mark">⛰️</span></div></div>
+        <div class="face back"><div class="sheet"></span></div></div>
       </div>
 
       <!-- ===== 2. SOBRE MÍ ===== -->
@@ -328,7 +336,7 @@
             </div>
           </div>
         </div></div>
-        <div class="face back"><div class="sheet"><span class="mark">🐾</span></div></div>
+        <div class="face back"><div class="sheet"></span></div></div>
       </div>
 
       <!-- ===== 3. PROYECTOS U ===== -->
@@ -355,7 +363,7 @@
             </div>
           </div>
         </div></div>
-        <div class="face back"><div class="sheet"><span class="mark">☕</span></div></div>
+        <div class="face back"><div class="sheet"></span></div></div>
       </div>
 
       <!-- ===== 4. PROYECTOS PRIVADOS ===== -->
@@ -384,7 +392,7 @@
             </div>
           </div>
         </div></div>
-        <div class="face back"><div class="sheet"><span class="mark">⛰️</span></div></div>
+        <div class="face back"><div class="sheet"></span></div></div>
       </div>
 
       <!-- ===== 5. PRÁCTICAS ===== -->
@@ -407,7 +415,7 @@
             </div>
           </div>
         </div></div>
-        <div class="face back"><div class="sheet"><span class="mark">🐾</span></div></div>
+        <div class="face back"><div class="sheet"></span></div></div>
       </div>
 
       <!-- ===== 6. IDIOMAS ===== -->
@@ -418,10 +426,10 @@
           <div class="lang">
             <div class="lang-row"><span class="lang-name">Español</span><div class="bar"><span style="width:100%"></span></div><span class="lang-lvl">Nativo</span></div>
             <div class="lang-row"><span class="lang-name">Inglés</span><div class="bar"><span style="width:70%"></span></div><span class="lang-lvl">B2</span></div>
-            <div class="lang-row"><span class="lang-name">Francés</span><div class="bar"><span style="width:40%"></span></div><span class="lang-lvl">A1</span></div>
+            <div class="lang-row"><span class="lang-name">Francés</span><div class="bar"><span style="width:18%"></span></div><span class="lang-lvl">A1</span></div>
           </div>
         </div></div>
-        <div class="face back"><div class="sheet"><span class="mark">⛰️</span></div></div>
+        <div class="face back"><div class="sheet"></div></div>
       </div>
 
       <!-- ===== 7. CV + CONTACTO ===== -->
@@ -442,7 +450,7 @@
             <span>café</span><span class="sp">✦</span><span>trekking</span><span class="sp">✦</span><span>manualidades</span><span class="sp">✦</span><span>código</span><span class="sp">✦</span>
           </div></div>
         </div></div>
-        <div class="face back"><div class="sheet"><span class="mark">fin ☕</span></div></div>
+        <div class="face back"><div class="sheet"></span></div></div>
       </div>
 
     </div>
