@@ -11,7 +11,7 @@
 Decidí salir un poco de las plantillas web para hacer una experiencia más editorial y narrativa. Cada sección es una "página" que el usuario puede hojear.
 
 *   **Estructura 3D:** Uso avanzado de `transform-style: preserve-3d` y `perspective` en CSS para simular el volumen del libro, el sombreado del lomo y el paso de las hojas.
-*   **Identidad Visual:** Paleta de colores cálida y personalizada (`--pine`, `--rose`, `--wine`, `--cream`), inspirada en un estilo clásico, acompañada de tipografías seleccionadas (Playfair Display, Parisienne).
+*   **Identidad Visual:** Paleta de colores cálida y personalizada (`--pine`, `--rose`, `--wine`, `--cream`), inspirada en un estilo clásico, acompañada de tipografías seleccionadas (Playfair Display, Parisienne, Fredoka).
 *   **Interactividad:** Navegación integrada mediante clics, teclado (flechas) y un menú dinámico inferior, además de un sistema de *lightbox* y ventanas modales customizadas para explorar capturas de los proyectos.
 
 ---
@@ -40,4 +40,4 @@ A lo largo de los proyectos que detallo en el portafolio, aplico tecnologías co
 **Contacto:** 
 Puedes descargar mi CV directamente desde el portafolio, o encontrarme en:
 *   [Email](mailto:catamuduran29@gmail.com)
-*   [LinkedIn](Lo voy a actulizar cuando me haga uno c:)
+*   **LinkedIn:** *(próximamente)*
